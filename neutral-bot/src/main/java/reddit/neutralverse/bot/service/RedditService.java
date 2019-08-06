@@ -1,4 +1,4 @@
-package reddit.neutralverse.botpoc.service;
+package reddit.neutralverse.bot.service;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,27 +15,16 @@ public class RedditService {
         this.restTemplate = restTemplate;
     }
 
-    /*public String getModActions(String subreddit) {
-
-    }*/
-
     public void test() {
         JsonNode node = restTemplate.getForObject(
                 "https://oauth.reddit.com/api/v1/me", JsonNode.class);
 
         System.err.println(node);
+    }
 
-
-
-/*        HttpHeaders headers = new HttpHeaders();
-        //headers.set("User-agent", "hrp402_test");
-
-        HttpEntity entity = new HttpEntity(headers);
-
-        ResponseEntity<JsonNode> response = restTemplate.exchange(
-                "https://oauth.reddit.com/api/v1/me", HttpMethod.GET, entity, JsonNode.class);
-        System.err.println(response);*/
-        return;
+    public void getModLog() {
+        JsonNode modLog = restTemplate.getForObject("https://oauth.reddit.com/r/HR_Paperstacks_402/about/log", JsonNode.class);
+        System.err.println(modLog);
     }
 
 }

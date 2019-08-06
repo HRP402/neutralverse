@@ -4,25 +4,18 @@ spring:
       client:
         registration:
           reddit:
-            client-id: 0zhuA6YPKbefRA
-            client-secret: zxNUj_vlP3sbrBdPCWO_FampW6M
+            client-id: #
+            client-secret: #
             client-name: hrp402_test
             provider: reddit
             authorization-grant-type: client_credentials
+            username: #
+            password: #
             scope:
               - identity
+              - modlog
+              - wikiedit
         provider:
           reddit:
             token-uri: https://www.reddit.com/api/v1/access_token
             authorization-url: https://www.reddit.com/api/v1/authorize
-security:
-  oauth2:
-    client:
-      id: reddit
-      client-id: 0zhuA6YPKbefRA
-      access-token-uri: https://www.reddit.com/api/v1/access_token
-      client-secret: zxNUj_vlP3sbrBdPCWO_FampW6M
-      user-authorization-uri: https://www.reddit.com/api/v1/authorize
-      grant-type: client_credentials
-      scope:
-        - identity
